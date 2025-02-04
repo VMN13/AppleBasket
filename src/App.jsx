@@ -1,15 +1,14 @@
 import './App.css';
-
 import Cart from './components/Cart';
-import CartFooter from './components/cartFooter';
+import Header from './Header';
+
 function App() {
   return (
     <>
-    <main className='main'>
-      
-      <Cart />
-      
-    </main>
+      <main className='main'>
+        <Header />
+        <Cart />
+      </main>
     </>
   );
 }

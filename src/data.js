@@ -24,8 +24,7 @@ const cart = [
   count: 1,
   price: 1200,
   priceTotal: 1200
-}
+},
 ];
-
 
 export default cart;

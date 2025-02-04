@@ -10,28 +10,35 @@ const Product = ({product, deleteProduct, increase, decrease, changeValue}) => {
   return (
     <>
       <section className='sectionItemOne'>
+        <div>
         <img 
+          className="img"
           src={Iphone} 
           alt={title} 
-          style={{width: "100px", height: "100px"}} />
+           />
+          </div>
           <div>
             {title}
           </div>
-          <Count 
+          
+          <div>
+          <Count
+            className="count" 
             count={count} 
             increase={increase} 
             id={id} 
             decrease={decrease} 
             changeValue={changeValue} />
-              <div>
+            </div>
+              <div className="price">
                 {priceFormator.format(priceTotal)}
-                
               </div>
+              <div>
                 <ButtonDelete 
                   deleteProduct={deleteProduct} 
                   id={id} />
+                  </div>
       </section>
-    
     </>
   )
 };

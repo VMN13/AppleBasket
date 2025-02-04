@@ -8,24 +8,17 @@ const Cart = (
 ) => {
 
 const [cart, setCart] = useState(data);
-
 const [total, setTotal] = useState({
-  price: cart.reduce((prev, curr) => prev + curr.priceTotal
-  , 0),
-  count: cart.reduce((prev, curr) => prev + curr.count
-  , 0)
+  price: cart.reduce((prev, curr) => prev + curr.priceTotal, 0),
+  count: cart.reduce((prev, curr) => prev + curr.count, 0)
 })
 
 useEffect(() => {
   setTotal({
-    price: cart.reduce((prev, curr) => prev + curr.priceTotal
-    , 0),
-    count: cart.reduce((prev, curr) =>  prev + curr.count
-    , 0)
+    price: cart.reduce((prev, curr) => prev + curr.priceTotal, 0),
+    count: cart.reduce((prev, curr) =>  prev + curr.count, 0)
   })
 }, [cart]);
-
-
 
 const deleteProduct = (id) => {
   console.log('Delete!!!', id);
@@ -44,9 +37,7 @@ const increaseProductCount = (id) => {
       return product;
     })
   })
- 
 }
-
 const decreaseProductCount = (id) => {
   console.log('Decrease!!!', id);
     
@@ -61,15 +52,13 @@ const decreaseProductCount = (id) => {
       }
       return product;
     })
-  })
-}
+  });
+};
 
 const increase = (id) => {
-
 }
 
 const decrease = (id) => {
-
 }
 
 const changeValue = (id, value) => {
@@ -83,9 +72,8 @@ const changeValue = (id, value) => {
       }
       return product;
     })
-  })
-}
-
+  });
+};
 
 const products = cart.map((product) => {
   return (
@@ -97,12 +85,14 @@ const products = cart.map((product) => {
       decrease={decreaseProductCount} 
       changeValue={changeValue}
       />
-)})
+)});
+
   return (
     <>
-  <CartHeader />
-    {products}
-  <CartFooter total={total} />
+      <CartHeader />
+        {products}
+      <CartFooter 
+        total={total} />
     </>
   );
 };
